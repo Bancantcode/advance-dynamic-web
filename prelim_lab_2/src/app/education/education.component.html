@@ -1,0 +1,19 @@
+<main>
+    <h1>Education</h1>
+    <hr>
+    <div class="info">
+        <div class="school">
+            <h3>HOLY ANGEL UNIVERSITY</h3>
+            <h3>#1 Holy Angel St, Angeles, 2009 Pampanga, Philippines</h3>
+        </div>
+        <p class="course"><i>B.S in Information Technology with area<br> specialization in Web Development</i></p>
+        <div class="grade">
+            <p>Dean's List</p>
+            <p><b>GPA: 1.32</b></p>
+        </div>
+    </div>
+    <div class="coursework">
+        <ul><li *ngFor="let coursework of relevantCoursework1">{{ coursework }}</li></ul>
+        <ul><li *ngFor="let coursework of relevantCoursework2">{{ coursework }}</li></ul>
+    </div>
+</main>

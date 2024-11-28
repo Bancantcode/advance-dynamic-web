@@ -1,0 +1,13 @@
+<main>
+    <h1>Projects</h1>
+    <hr>
+    <div class="work-experience">
+        <div *ngFor="let project of projectName" class="project">
+            <h3>{{ project.name }}</h3>
+            <ul>
+                <li>{{ project.description1 }}</li>
+                <li>{{ project.description2 }}</li>
+            </ul>
+        </div>
+    </div>
+</main>

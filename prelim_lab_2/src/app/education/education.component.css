@@ -1,0 +1,30 @@
+.coursework {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--space-sm);
+}
+
+.school, .grade {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-2xs);
+}
+
+.course {
+    margin-bottom: var(--space-2xs);
+}
+
+.info {
+    margin-bottom: var(--space-sm);
+}
+
+@media screen and (max-width: 768px) {
+    .coursework {
+        flex-direction: column;
+        padding: 0 var(--space-md);
+    }
+
+    .school {
+        flex-direction: column;
+    }
+}
