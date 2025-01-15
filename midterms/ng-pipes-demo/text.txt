@@ -1,0 +1,11 @@
+go to your 2199_SANTIAGO (your folder)
+mkdir midterms
+ng new ng-pipes-demo
+sudo chown -R SJH-706 midterms --> SJH-706 is the user and midterms is the user
+cd midterms
+sudo chown -R SJH-706 ng-pipes-demo
+cd ng-pipes-demo
+sudo chown -R SJH-706 src
+remove all content in app.component.html except the router outlet
+then import commonmodule in app.component.ts and add it into the imports
+

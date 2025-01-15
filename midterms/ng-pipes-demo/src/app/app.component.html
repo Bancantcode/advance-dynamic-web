@@ -1,0 +1,62 @@
+<main>
+    <!-- ADDING THE DATE PIPE -->
+    <div> 
+        Today's date :- {{presentDate}}
+    </div>
+
+    <!-- PARAMETER IN DATE -->
+    <div>
+        This is a short date :- {{ presentDate | date: 'shortDate' }}<br/>
+        This line shows the full date :- {{ presentDate | date: 'fullDate' }}<br/>
+        This will show a formatted date :- {{ presentDate | date: 'dd-MM-yyyy' }}<br/>
+        This indicates the hours and minutes :- {{ presentDate | date: 'hh:mm' }}<br/>
+        This shows the month day and year :- {{ presentDate | date: 'MM-dd-yyyy' }}
+    </div>
+
+    <!-- CHAINED PIPES -->
+    <div>
+        Date with uppercase :- {{ presentDate | date: 'fullDate' | uppercase }} <br/>
+        Date with lowercase :- {{ presentDate | date: 'medium' | lowercase }} <br/>
+    </div>
+
+    <!-- AsyncPipe -->
+    <div>
+        Second changing in Time: {{ time$ | async | date: 'mediumTime' }}
+    </div>
+
+    <!-- JsonPipe -->
+    <h2>Json Pipes!</h2>
+    <p>Object: {{ testObject }}</p>
+    <p>Object with JsonPipe: {{ testObject | json }}</p>
+    <!-- <p>array: {{ testArray }}</p> -->
+
+    <!-- Currency Pipe -->
+    <h3>Currency Pipe</h3>
+    <p>{{ price | currency: '': true }}</p>
+    <p>{{ price | currency:'INR' }}</p>
+
+    <!-- SlicePipe -->
+    <div>
+        <h3>Start index:- {{ Fruits | slice:2 }}</h3>
+        <h4>Start and end index:- {{ Fruits | slice:1:4 }}</h4>
+        <h5>Negative index:- {{ Fruits | slice:-2 }}</h5>
+        <h6>Negative start and end index:- {{ Fruits | slice:-4:-2 }}</h6>
+    </div>
+
+    <!-- Decimal Pipe -->
+    template:
+    <div>
+        <h3>Decimal Pipe</h3>
+        <p>{{ decimalNum1 | number }}</p>
+        <p>{{ decimalNum2 | number }}</p>
+    </div>
+
+    <!-- Modified HTML/TEMPLATE FOR DECIMAL PIPE -->
+    template:
+    <div style="text-align:center">
+        <p>Apply formatting:- {{ decimalNum1 | number:'3.1' }}</p>
+        <p>Apply formatting:- {{ decimalNum2 | number:'2.1-4' }}</p>
+    </div>
+</main>
+
+<router-outlet />
