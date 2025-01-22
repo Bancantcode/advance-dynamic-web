@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { interval } from 'rxjs';
 import { map } from 'rxjs';
+import { MyServiceService } from './my-service.service';
 
 @Component({
   selector: 'app-root',
@@ -40,5 +41,10 @@ export class AppComponent {
   // Decimal Pipe
   decimalNum1: number = 8.2343242;
   decimalNum2: number = 5.43;
+
+  todaydate;
+  constructor(private myservice:MyServiceService) {
+    this.todaydate = this.myservice.showTodayDate();
+  }
 
 }

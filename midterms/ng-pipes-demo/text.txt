@@ -9,3 +9,9 @@ sudo chown -R SJH-706 src
 remove all content in app.component.html except the router outlet
 then import commonmodule in app.component.ts and add it into the imports
 
+==============================================================================
+
+go to ng-pipes-demo then run the command ng g service my-service (ng generate service my-service)
+
+
+
