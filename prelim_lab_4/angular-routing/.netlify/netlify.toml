@@ -1,0 +1,36 @@
+functionsDirectory = "/Users/sjh-706/2199_Santiago/advance-dynamic-web/prelim_lab_4/angular-routing/netlify/functions"
+functionsDirectoryOrigin = "ui"
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[[plugins]]
+origin = "default"
+package = "@netlify/angular-runtime"
+
+[plugins.inputs]
+
+[build]
+publish = "/Users/sjh-706/2199_Santiago/advance-dynamic-web/prelim_lab_4/angular-routing/dist/angular-routing/browser"
+publishOrigin = "ui"
+commandOrigin = "ui"
+base = "/Users/sjh-706/2199_Santiago/advance-dynamic-web/prelim_lab_4/angular-routing"
+command = "npm run build"
+functions = "/Users/sjh-706/2199_Santiago/advance-dynamic-web/prelim_lab_4/angular-routing/netlify/functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
