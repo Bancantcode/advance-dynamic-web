@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { interval } from 'rxjs';
 import { map } from 'rxjs';
 import { MyServiceService } from './my-service.service';
+import { NewCmpComponent } from './new-cmp/new-cmp.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    CommonModule
+    CommonModule,
+    NewCmpComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
