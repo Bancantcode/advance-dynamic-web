@@ -1,0 +1,43 @@
+<main class="container">
+  <h2 class="title">EMPLOYEE LIST</h2>
+  
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.firstname }}</td>
+        <td>{{ employee.lastname }}</td>
+        <td>{{ employee.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="title">PRODUCT LIST</h2>
+  
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>PRODUCT ID</th>
+        <th>PRODUCT NAME</th>
+        <th>DESCRIPTION</th>
+        <th>PRICE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.product_id }}</td>
+        <td>{{ product.product_name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
