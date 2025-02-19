@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -11,13 +11,24 @@ import { CommonModule } from '@angular/common';
   styleUrl: './reactive-driven.component.css'
 })
 export class ReactiveDrivenComponent {
-  title = "reactive form app"
+  title = "Reactive Driven Form";
   userName: string = "";
+  email: string = "";
+  password: string = "";
   formdata: FormGroup = new FormGroup({
-    userName: new FormControl("")
+    userName: new FormControl("", [Validators.required, Validators.minLength(3)]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [Validators.required, Validators.minLength(6)]),
+    age: new FormControl("", [Validators.required, Validators.min(18)]),
   });
 
-  onClickSubmit(data: { userName: string }) {
-    this.userName = data.userName;
+  onClickSubmit(data: { userName: string, email: string, password: string, age: number }) {
+    if (this.formdata.valid) {
+      this.userName = data.userName;
+      this.email = data.email; 
+      this.password = data.password;
+    } else {
+      console.log('Form is invalid!');
+    }
   }
 }

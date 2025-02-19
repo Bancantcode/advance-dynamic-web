@@ -1,14 +1,52 @@
-<h1>Template Driven</h1>
-<!-- <form action="" #userForm="ngForm">
-    <input type="text" name="username" [(ngModel)]="anytext">
-    <input type="email" name="email" [(ngModel)]="anytext">
-</form>  -->
-<div>
-    <form action="" (ngSubmit)="onSubmit()">
-        <input class="input-btn" type="text" name="username" [(ngModel)]="anytext" placeholder="Input any text" required>
-        <input class="btn" type="submit" value="Submit" [disabled]="!anytext">
-    </form>     
+<h1>{{ title }}</h1>
+
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    
+    <div class="form-field">
+      <label for="username">User Name</label>
+      <input class="input-box" type="text" name="username" [(ngModel)]="anytext" id="username" placeholder="Enter your username" required>
+      <div *ngIf="userForm.controls['username']?.invalid && userForm.controls['username']?.touched" class="error">
+        <small>User Name is required.</small>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input class="input-box" type="email" name="email" [(ngModel)]="email" id="email" placeholder="Enter your email" required email>
+      <div *ngIf="userForm.controls['email']?.invalid && userForm.controls['email']?.touched" class="error">
+        <small *ngIf="userForm.controls['email']?.hasError('required')">Email is required.</small>
+        <small *ngIf="userForm.controls['email']?.hasError('email')">Please enter a valid email address.</small>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="password">Password</label>
+      <input class="input-box" type="password" name="password" [(ngModel)]="password" id="password" placeholder="Enter your password" required minlength="6">
+      <div *ngIf="userForm.controls['password']?.invalid && userForm.controls['password']?.touched" class="error">
+        <small *ngIf="userForm.controls['password']?.hasError('required')">Password is required.</small>
+        <small *ngIf="userForm.controls['password']?.hasError('minlength')">Password must be at least 6 characters long.</small>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="age">Age</label>
+      <input class="input-box" type="number" name="age" [(ngModel)]="age" id="age" placeholder="Enter your age" required min="18">
+      <div *ngIf="userForm.controls['age']?.invalid && userForm.controls['age']?.touched" class="error">
+        <small *ngIf="userForm.controls['age']?.hasError('required')">Age is required.</small>
+        <small *ngIf="userForm.controls['age']?.hasError('min')">You must be at least 18 years old.</small>
+      </div>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="userForm.invalid">Submit</button>
+  </form>
+  <p class="my-name">** BRYAN AARON B. SANTIAGO | WD-302 **</p>
 </div>
-<p *ngIf="submitted">You have entered: {{ anytext }}</p>
 
-
+<div *ngIf="submitted" class="information">
+  <h2>Submitted Information</h2>
+  <p><strong>Username:</strong> {{ anytext }}</p>
+  <p><strong>Email:</strong> {{ email }}</p>
+  <p><strong>Password:</strong> {{ password }}</p>
+  <p><strong>Age:</strong> {{ age }}</p>
+</div>

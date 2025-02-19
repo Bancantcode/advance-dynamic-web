@@ -11,9 +11,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './template-driven.component.css'
 })
 export class TemplateDrivenComponent {
-  title = 'template form app';
+  title = 'Template Form App';
   anytext: string = "";
-  submitted: boolean = false;
+  email: string = "";
+  password: string = "";
+  age: number | null = null; 
+  submitted: boolean = false
 
   onSubmit() {
     this.submitted = true;

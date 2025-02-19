@@ -1,8 +1,52 @@
-<h1>Reactive Driven</h1>
-<div>
-    <form action="" [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
-        <input type="text" class="input-box" name="userName" placeholder="Enter Text" formControlName="userName">
-        <input type="submit" class="btn" value="Click here"> 
-    </form>
+<h1>{{ title }}</h1>
+
+<div class="form-container">
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    
+    <div class="form-field">
+      <label for="userName">User Name</label>
+      <input type="text" class="input-box" formControlName="userName" id="userName" placeholder="Enter your name">
+      <div *ngIf="formdata.controls['userName'].invalid && formdata.controls['userName'].touched" class="error">
+        <small *ngIf="formdata.controls['userName'].hasError('required')">User Name is required.</small>
+        <small *ngIf="formdata.controls['userName'].hasError('minlength')">User Name must be at least 3 characters long.</small>
+      </div>
+    </div>
+    
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input type="email" class="input-box" formControlName="email" id="email" placeholder="Enter your email">
+      <div *ngIf="formdata.controls['email'].invalid && formdata.controls['email'].touched" class="error">
+        <small *ngIf="formdata.controls['email'].hasError('required')">Email is required.</small>
+        <small *ngIf="formdata.controls['email'].hasError('email')">Please enter a valid email address.</small>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="password">Password</label>
+      <input type="password" class="input-box" formControlName="password" id="password" placeholder="Enter your password">
+      <div *ngIf="formdata.controls['password'].invalid && formdata.controls['password'].touched" class="error">
+        <small *ngIf="formdata.controls['password'].hasError('required')">Password is required.</small>
+        <small *ngIf="formdata.controls['password'].hasError('minlength')">Password must be at least 6 characters long.</small>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="age">Age</label>
+      <input type="number" class="input-box" formControlName="age" id="age" placeholder="Enter your age">
+      <div *ngIf="formdata.controls['age'].invalid && formdata.controls['age'].touched" class="error">
+        <small *ngIf="formdata.controls['age'].hasError('required')">Age is required.</small>
+        <small *ngIf="formdata.controls['age'].hasError('min')">You must be at least 18 years old.</small>
+      </div>
+    </div>
+    
+    <button class="btn" type="submit" [disabled]="formdata.invalid">Submit</button>
+  </form>
+  <p class="my-name">** BRYAN AARON B. SANTIAGO | WD-302 **</p>
 </div>
-<p>You have entered: {{ userName }} </p>
+
+<div *ngIf="userName || email || password" class="information">
+    <h2>Submitted Information</h2>
+    <p *ngIf="userName">Your username is: <strong>{{ userName }}</strong></p>
+    <p *ngIf="email">Your entered email is: <strong>{{ email }}</strong></p>
+    <p *ngIf="password">Your entered password is: <strong>{{ password }}</strong></p>
+</div>
