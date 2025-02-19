@@ -1,85 +1,89 @@
-/* Navbar Custom Styles */
 nav {
     font-family: 'Arial', sans-serif;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     padding: 10px 20px;
-  }
-  
-  .navbar-brand {
+}
+
+.navbar-brand {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #fff !important; /* Ensure brand text is white */
+    color: #fff !important;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .navbar-brand:hover {
-    color: #e3f2fd; /* Light hover effect */
-  }
-  
-  .nav-item {
+}
+
+.navbar-brand:hover {
+    color: #e3f2fd;
+}
+
+.nav-item {
     margin-left: 20px;
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     color: #fff !important;
     font-size: 1rem;
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .nav-link:hover {
+}
+
+.nav-link:hover {
     background-color: #5b9bd5;
     text-decoration: none;
-    transform: scale(1.05); /* Add a slight zoom effect on hover */
-  }
-  
-  /* Active Link */
-  .nav-link.active {
+    transform: scale(1.05);
+}
+
+.nav-link.active {
     background-color: #0056b3;
-  }
-  
-  /* Mobile View Styling */
-  @media (max-width: 992px) {
+}
+
+.h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 80vh;
+}
+
+@media (max-width: 992px) {
     .navbar-nav {
-      text-align: center;
+        text-align: center;
     }
-  
+
     .nav-item {
-      margin-left: 0;
-      margin-bottom: 10px;
+        margin-left: 0;
+        margin-bottom: 10px;
     }
-  
+
     .nav-link {
-      padding: 12px;
+        padding: 12px;
     }
-  }
-  
-  @media (max-width: 576px) {
+}
+
+@media (max-width: 576px) {
     .navbar {
-      padding: 10px 15px;
+        padding: 10px 15px;
     }
-  
+
     .navbar-brand {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     .nav-link {
-      font-size: 0.9rem;
-      padding: 8px 15px;
+        font-size: 0.9rem;
+        padding: 8px 15px;
     }
-  }
-  
-  @media (max-width: 400px) {
+}
+
+@media (max-width: 400px) {
     .navbar-brand {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  
+
     .nav-link {
-      font-size: 0.85rem;
-      padding: 8px 12px;
+        font-size: 0.85rem;
+        padding: 8px 12px;
     }
-  }
-  
+}

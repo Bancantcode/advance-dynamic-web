@@ -42,11 +42,11 @@
     <button class="btn" type="submit" [disabled]="formdata.invalid">Submit</button>
   </form>
   <p class="my-name">** BRYAN AARON B. SANTIAGO | WD-302 **</p>
+  <div *ngIf="userName || email || password" class="information">
+      <h2>Submitted Information</h2>
+      <p *ngIf="userName">Your username is: <strong>{{ userName }}</strong></p>
+      <p *ngIf="email">Your entered email is: <strong>{{ email }}</strong></p>
+      <p *ngIf="password">Your entered password is: <strong>{{ password }}</strong></p>
+  </div>
 </div>
 
-<div *ngIf="userName || email || password" class="information">
-    <h2>Submitted Information</h2>
-    <p *ngIf="userName">Your username is: <strong>{{ userName }}</strong></p>
-    <p *ngIf="email">Your entered email is: <strong>{{ email }}</strong></p>
-    <p *ngIf="password">Your entered password is: <strong>{{ password }}</strong></p>
-</div>

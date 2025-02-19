@@ -41,12 +41,12 @@
     <button class="btn" type="submit" [disabled]="userForm.invalid">Submit</button>
   </form>
   <p class="my-name">** BRYAN AARON B. SANTIAGO | WD-302 **</p>
+  <div *ngIf="submitted" class="information">
+    <h2>Submitted Information</h2>
+    <p><strong>Username:</strong> {{ anytext }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Password:</strong> {{ password }}</p>
+    <p><strong>Age:</strong> {{ age }}</p>
+  </div>
 </div>
 
-<div *ngIf="submitted" class="information">
-  <h2>Submitted Information</h2>
-  <p><strong>Username:</strong> {{ anytext }}</p>
-  <p><strong>Email:</strong> {{ email }}</p>
-  <p><strong>Password:</strong> {{ password }}</p>
-  <p><strong>Age:</strong> {{ age }}</p>
-</div>
