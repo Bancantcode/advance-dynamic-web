@@ -8,16 +8,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/" >Home</a>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/template" >Template Driven</a>
+            <a class="nav-link" routerLink="/template" routerLinkActive="active" >Template Driven</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/reactive" >Reactive Driven</a>
+            <a class="nav-link" routerLink="/reactive" routerLinkActive="active">Reactive Driven</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/reactive-form-validation" >Reactive Form Validation</a>
+            <a class="nav-link" routerLink="/reactive-form-validation"routerLinkActive="active">Reactive Form Validation</a>
           </li>
         </ul>
       </div>
