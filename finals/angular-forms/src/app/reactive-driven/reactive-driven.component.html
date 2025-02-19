@@ -1,0 +1,8 @@
+<h1>Reactive Driven</h1>
+<div>
+    <form action="" [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <input type="text" class="input-box" name="userName" placeholder="Enter Text" formControlName="userName">
+        <input type="submit" class="btn" value="Click here"> 
+    </form>
+</div>
+<p>You have entered: {{ userName }} </p>

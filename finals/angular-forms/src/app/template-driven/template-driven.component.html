@@ -1,0 +1,14 @@
+<h1>Template Driven</h1>
+<!-- <form action="" #userForm="ngForm">
+    <input type="text" name="username" [(ngModel)]="anytext">
+    <input type="email" name="email" [(ngModel)]="anytext">
+</form>  -->
+<div>
+    <form action="" (ngSubmit)="onSubmit()">
+        <input class="input-btn" type="text" name="username" [(ngModel)]="anytext" placeholder="Input any text" required>
+        <input class="btn" type="submit" value="Submit" [disabled]="!anytext">
+    </form>     
+</div>
+<p *ngIf="submitted">You have entered: {{ anytext }}</p>
+
+
