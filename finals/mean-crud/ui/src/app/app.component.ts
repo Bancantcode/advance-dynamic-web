@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ui';
+  title = 'booksapp';
   //set the link of the based route
   readonly APIUrl="http://localhost:5038/api/books/";
   
